@@ -46,7 +46,7 @@ class instructors {
     async registerinstructor(req, res) {
         try {
             let data = req.body
-              data.userPass = await hash(data.pwd, 12)
+              data.pwd = await hash(data.pwd, 12)
 
             let user = {
             emailAdd: data.emailAdd,
@@ -128,7 +128,7 @@ class instructors {
 
     login(req, res) {
         try {
-            const {emailAdd, userPass} = req.body
+            const {emailAdd, pwd} = req.body
             const strQry = `
             select  instructor_id, first_name, last_name, email, specialization, bio, profile_url, pwd
             from instructors
@@ -145,10 +145,10 @@ class instructors {
                 )
               } else {
                 const isValidPass = await compare 
-                (pwd, result[0].userPass)
+                (pwd, result[0].pwd)
                 if (isValidPass) {
                   const token = createToken({
-                    emailAdd, userPass
+                    emailAdd, pwd
                   })
                   res.json({
                       status: res.statusCode,

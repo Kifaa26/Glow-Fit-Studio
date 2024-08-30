@@ -48,11 +48,11 @@ class Users {
     async registerUser(req, res) {
         try {
             let data = req.body
-              data.userPass = await hash(data.userPass, 12)
+              data.pwd = await hash(data.pwd, 12)
 
             let user = {
             emailAdd: data.emailAdd,
-            userPass: data.userPass
+            pwd: data.pwd
             } 
             
             let strQry = `
@@ -84,8 +84,8 @@ class Users {
    async updateUser(req, res) {
         try {
             let data = req.body
-            if (data.userPass) {
-              data.userPass = await hash(data.userPass, 12)
+            if (data.pwd) {
+              data.pwd = await hash(data.pwd, 12)
             }
             const strQry = `
             update Users
@@ -130,7 +130,7 @@ class Users {
 
     login(req, res) {
         try {
-            const {emailAdd, userPass} = req.body
+            const {emailAdd, pwd} = req.body
             const strQry = `
             select userID, firstName, lastName, role, emailAdd, phoneNumb, pwd, profile_url
             from Users
@@ -147,10 +147,10 @@ class Users {
                 )
               } else {
                 const isValidPass = await compare 
-                (userPass, result[0].userPass)
+                (pwd, result[0].pwd)
                 if (isValidPass) {
                   const token = createToken({
-                    emailAdd, userPass
+                    emailAdd, pwd
                   })
                   res.json({
                       status: res.statusCode,

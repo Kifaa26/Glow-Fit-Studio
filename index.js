@@ -1,5 +1,5 @@
 import path from "path";   
-import { userRouter, express } from "./controller/UserController.js";
+import { userRouter, express } from "./controller/UsersController.js";
 import { errorHandling } from "./middleware/ErrorHandling.js";
 import cors from 'cors'
 import { instructorRouter } from "./controller/InstructorsController.js";

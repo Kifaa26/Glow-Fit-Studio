@@ -1,6 +1,6 @@
 import { connection as db } from '../config/index.js'
 
-class instructors {
+class Instructors {
     fetchinstructors(req, res) {
         try {
             const strQry = `
@@ -174,5 +174,5 @@ class instructors {
 }
 
 export {
-    instructors
+    Instructors
 }

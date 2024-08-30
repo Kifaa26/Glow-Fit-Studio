@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Glow-Fit Studio</title>
+</head>
+<body>
+    <h2>Welcome to Glow-Fit Studio</h2>
+
+    <main>
+        <table border = 5>
+            <caption><h3>Landing</h3></caption>
+            <thead>
+                <tr>
+                    <th>HTTP Methods</th>
+                    <th>Path</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>GET</td>
+                    <td>/</td>
+                    <td>Fetches landing/home page</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table border = 5>
+            <caption><h3>Users</h3></caption>
+            <thead>
+                <tr>
+                    <th>HTTP Method</th>
+                    <th>Path</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>GET</td>
+                    <td>/users</td>
+                    <td>Fetches all Users data from the database</td>
+                </tr>
+                <tr>
+                    <td>GET</td>
+                    <td>/users/:id</td>
+                    <td>Fetches a single User's data from the database for the id provided</td>
+                </tr>
+                <tr>
+                    <td>POST</td>
+                    <td>/users/register</td>
+                    <td>Adds a new user to the database.</td>
+                </tr>
+                <tr>
+                    <td>PATCH</td>
+                    <td>/users/update/:id</td>
+                    <td>Updates a user for the id value provided.</td>
+                </tr>
+                <tr>
+                    <td>DELETE</td>
+                    <td>/users/delete/:id</td>
+                    <td>Deletes a user's data from the database for the id provided</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table border = 5>
+            <caption><h3>Instructors</h3></caption>
+            <thead>
+                <tr>
+                    <th>HTTP Method</th>
+                    <th>Path</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>GET</td>
+                    <td>/instructors</td>
+                    <td>Fetches all instructors data from the database</td>
+                </tr>
+                <tr>
+                    <td>GET</td>
+                    <td>/instructors/:id</td>
+                    <td>Fetches a instructor's data from the database for the id provided.</td>
+                </tr>
+                <tr>
+                    <td>GET</td>
+                    <td>/instructors/latest</td>
+                    <td>Fetches the last 4 instructors added to the database from the most recent.</td>
+                </tr>
+                <tr>
+                    <td>POST</td>
+                    <td>/instructors/addInstructors</td>
+                    <td>Adds a new instructor to the database.</td>
+                </tr>
+                <tr>
+                    <td>PATCH</td>
+                    <td>/Instructors/update/:id</td>
+                    <td>Updates a instructor for the id value provided.</td>
+                </tr>
+                <tr>
+                    <td>DELETE</td>
+                    <td>/Instructors/delete/:id</td>
+                    <td>Deletes a instructor's data from the database for the id provided</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

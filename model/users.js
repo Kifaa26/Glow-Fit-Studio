@@ -6,7 +6,7 @@ class Users {
     fetchUsers(req, res) {
         try {
             const strQry = `
-                select userID, firstName, lastName, role, emailAdd, phoneNumb, pwd, profile_url
+                select user_id, first_name, last_name, role, email, phone_numb, pwd, profile_url
                 from Users;
                 `
             db.query(strQry, (err, results) => {
@@ -27,7 +27,7 @@ class Users {
     fetchUser(req, res) {
         try{
             const strQry = `
-            select userID, firstName, lastName, role, emailAdd, phoneNumb, pwd, profile_url
+            select user_id, first_name, last_name, role, email, phone_numb, pwd, profile_url
             from Users where userID = ${req.params.id};
             `
             db.query(strQry, (err, result) => {
@@ -90,7 +90,7 @@ class Users {
             const strQry = `
             update Users
             set ?
-            where userID = ${req.params.id}
+            where user_id = ${req.params.id}
             `
             db.query(strQry, [data], (err) => {
               if (err) throw new Error('Unable to update user')
@@ -111,7 +111,7 @@ class Users {
         try {
             const strQry = `
             delete from Users 
-            where userID = ${req.params.id}
+            where user_id = ${req.params.id}
             `
             db.query(strQry, (err) => {
               if(err) throw new Error('There is an issue trying to Delete User.')
@@ -132,9 +132,9 @@ class Users {
         try {
             const {emailAdd, pwd} = req.body
             const strQry = `
-            select userID, firstName, lastName, role, emailAdd, phoneNumb, pwd, profile_url
+            select user_id, first_name, last_name, role, email, phone_numb, pwd, profile_url
             from Users
-            where emailAdd = '${emailAdd}'                  
+            where email = '${email}'                  
             `
             db.query(strQry, async (err, result) => {             
               if(err) throw new Error(err)
@@ -150,7 +150,7 @@ class Users {
                 (pwd, result[0].pwd)
                 if (isValidPass) {
                   const token = createToken({
-                    emailAdd, pwd
+                    email, pwd
                   })
                   res.json({
                       status: res.statusCode,

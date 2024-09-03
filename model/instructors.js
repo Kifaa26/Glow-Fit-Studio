@@ -26,7 +26,7 @@ class Instructors {
         try{
             const strQry = `
             select  instructor_id, first_name, last_name, email, specialization, bio, profile_url,pwd
-            from instructors where userID = ${req.params.id};
+            from instructors where user_id = ${req.params.id};
             `
             db.query(strQry, (err, result) => {
               if (err) throw new Error(err.message)
@@ -49,7 +49,7 @@ class Instructors {
               data.pwd = await hash(data.pwd, 12)
 
             let user = {
-            emailAdd: data.emailAdd,
+            email: data.email,
             pwd: data.pwd
             } 
             
@@ -88,7 +88,7 @@ class Instructors {
             const strQry = `
             update instructors
             set ?
-            where userID = ${req.params.id}
+            where instructor_id = ${req.params.id}
             `
             db.query(strQry, [data], (err) => {
               if (err) throw new Error('Unable to update user')
@@ -109,7 +109,7 @@ class Instructors {
         try {
             const strQry = `
             delete from instructors 
-            where userID = ${req.params.id}
+            where instructor_id = ${req.params.id}
             `
             db.query(strQry, (err) => {
               if(err) throw new Error('There is an issue trying to Delete User.')
@@ -132,7 +132,7 @@ class Instructors {
             const strQry = `
             select  instructor_id, first_name, last_name, email, specialization, bio, profile_url, pwd
             from instructors
-            where emailAdd = '${emailAdd}'                  
+            where email = '${email}'                  
             `
             db.query(strQry, async (err, result) => {             
               if(err) throw new Error(err)
@@ -148,7 +148,7 @@ class Instructors {
                 (pwd, result[0].pwd)
                 if (isValidPass) {
                   const token = createToken({
-                    emailAdd, pwd
+                    email, pwd
                   })
                   res.json({
                       status: res.statusCode,

@@ -20,5 +20,9 @@ caption h3 {
     padding: 10px;
     background-color: #000000;
     color: #ffffff;
-    text-align: left;
+    text-align: center;
+}
+
+.heading {
+    text-align: center;
 }

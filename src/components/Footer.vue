@@ -30,7 +30,6 @@
     margin: 0;
     width: 100%;
     flex-direction: column;
-    min-height: 00vh;
     }
     
     </style>

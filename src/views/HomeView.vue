@@ -26,6 +26,24 @@
         </div>
       </div>
     </section>
+
+    <section class="facilities">
+      <h2>Our Facilities</h2>
+      <div class="facility-images">
+        <div class="facility-item">
+          <img src="https://github.com/Kifaa26/glow-fit-studio-images/blob/main/ea63802cd21c49c410f7507e82007d87.jpg?raw=true" alt="Facility 1">
+          <p class="facility-description">Modern Cardio Equipment</p>
+        </div>
+        <div class="facility-item">
+          <img src="https://github.com/Kifaa26/glow-fit-studio-images/blob/main/71ec6583c2284c2fb62291bd80424e93.jpg?raw=true" alt="Facility 2">
+          <p class="facility-description">Spacious Yoga Studio</p>
+        </div>
+        <div class="facility-item">
+          <img src="https://github.com/Kifaa26/glow-fit-studio-images/blob/main/506f683f46b9672538cc64e1d814b219.jpg?raw=true" alt="Facility 3">
+          <p class="facility-description">Well-Equipped Strength Area</p>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -106,7 +124,7 @@ body {
 .classes p {
   font-size: 20px;
   color: #332e2e;
-  font-family: "Permanent Marker", cursive;
+  font-family: "Playfair Display", serif;
   text-shadow: 2px 2px 5px #c7c7c7c0;
 }
 
@@ -130,11 +148,52 @@ body {
   justify-content: center;
   gap: 1rem;
   margin: 1rem 0;
-  font-weight: bolder;
 }
 
 .class-images img {
   width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.facilities {
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(250, 170, 190, 0.9), rgba(247, 212, 109, 0.9));
+}
+
+.facilities h2 {
+  padding: 25px;
+  color: #332e2e;
+  font-family: "Permanent Marker", cursive;
+  text-shadow: 2px 2px 5px #c7c7c7c0;
+}
+
+.facility-item {
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.facility-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.facility-description {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.facility-images {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.facility-images img {
+   width: 400px;
   height: 300px;
   object-fit: cover;
   border-radius: 8px;
@@ -154,19 +213,19 @@ body {
     font-size: 0.9rem;
   }
 
-  .classes h2 {
+  .classes h2, .facilities h2 {
     font-size: 1.5rem;
   }
 
-  .classes p {
+  .classes p, .facility-description {
     font-size: 1rem;
   }
 
-  .class-images {
+  .class-images, .facility-images {
     flex-direction: column;
   }
 
-  .class-images img {
+  .class-images img, .facility-images img {
     width: 100%;
     height: auto;
   }
@@ -186,19 +245,19 @@ body {
     font-size: 0.8rem;
   }
 
-  .classes h2 {
+  .classes h2, .facilities h2 {
     font-size: 1.2rem;
   }
 
-  .classes p {
+  .classes p, .facility-description {
     font-size: 0.9rem;
   }
 
-  .class-images {
+  .class-images, .facility-images {
     flex-direction: column;
   }
 
-  .class-images img {
+  .class-images img, .facility-images img {
     width: 100%;
     height: auto;
   }
@@ -218,14 +277,12 @@ body {
     font-size: 0.7rem;
   }
 
-  .classes h2 {
+  .classes h2, .facilities h2 {
     font-size: 1rem;
   }
 
-  .classes p {
+  .classes p, .facility-description {
     font-size: 0.8rem;
   }
 }
-
-
 </style>

@@ -34,7 +34,7 @@
                         </li>
                         <ul class="userAccount navbar-nav">
                             <li class="nav-item">
-                                <router-link class="nav-link" to="/signup">Sign Up</router-link>
+                                <router-link class="nav-link" to="/signup/login">Sign Up/Login</router-link>
                             </li>
                         </ul>
                     </ul>
@@ -47,7 +47,7 @@
 <style scoped>
 .navbar {
   padding: 10px 20px;
- font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
   z-index: 1030; 
   position: fixed !important;
   width: 100vw !important;

@@ -7,7 +7,7 @@
           <p>At Glow-Fit Studio, we believe that fitness is more than just a workout; it's a transformative journey. Designed exclusively for women, our studio offers a unique blend of strength, flexibility, and endurance training in a supportive and vibrant environment. Whether you're a seasoned athlete or just starting your fitness journey, Glow-Fit Studio is here to help you achieve your goals and enhance your overall well-being.</p>
         </div>
         <div class="about-image p-5">
-          <img src="https://github.com/Kifaa26/glow-fit-studio-images/blob/main/pilates%203.jpg?raw=true" alt="Pilates Class 3">
+          <img src="https://github.com/Kifaa26/glow-fit-studio-images/blob/main/p3.jpg?raw=true" alt="Pilates Class 3">
         </div>
       </div>
     </section>
@@ -119,6 +119,7 @@ body {
  flex: 1;
   max-width: 500px;
   flex-shrink: 0;
+   margin-top: 50px;
 }
 
 .about-image img {
@@ -150,7 +151,7 @@ body {
 }
 
 .card {
-  background-color: white;
+  background-color: rgb(255, 236, 174);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);

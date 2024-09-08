@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sevillana&display=swap');
+
 *,
 *::after,
 *::before {
@@ -23,12 +26,22 @@ nav {
 
 nav a {
     font-weight: bold;
-    color: #000000;
+    color: #ffffff;
 }
 
 nav a.router-link-exact-active {
-    color: #000000;
+    color: #ffffff;
     font-weight: bolder;
+}
+
+.navbar-nav .nav-link.router-link-exact-active {
+  color: #ffffff; 
+  font-weight: bolder;
+}
+
+.navbar-nav .nav-link {
+  font-weight: bold;
+  color: #333; 
 }
 
 html {

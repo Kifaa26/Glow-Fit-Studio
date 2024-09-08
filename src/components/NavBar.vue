@@ -4,7 +4,8 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
             <div class="container-fluid">
                 <router-link class="navbar-brand" to="/">
-                    <img src="" loading="lazy" alt="logo">
+                    <span class="logo-main">Glow-Fit</span>
+                    <span class="logo-sub">Studio</span>
                 </router-link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -44,6 +45,70 @@
 </template>
 
 <style scoped>
+.navbar {
+  padding: 10px 20px;
+ font-family: "Playfair Display", serif;
+  z-index: 1030; 
+  position: fixed !important;
+  width: 100vw !important;
+  background: linear-gradient(90deg, rgba(250, 170, 190, 0.9) 0%, rgba(247, 212, 109, 0.9) 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.navbar-brand .logo {
+  height: 50px; 
+}
+
+.navbar-nav .nav-link {
+  font-weight: bold;
+  color: #fff;
+  position: relative; 
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 1px; 
+  height: 2px; 
+  width: 0;
+  background-color: #ffe77b; 
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 90%;
+}
+
+@media (max-width: 767.98px) {
+  .navbar-nav {
+    margin-top: 10px;
+  }
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo-main {
+  display: block;
+  font-size: 24px; /* Adjust size */
+  font-weight: bold;
+  color: #fff; /* Adjust color */
+  font-family: "Permanent Marker", cursive;
+}
+
+.logo-sub {
+  display: block;
+  font-size: 16px; /* Adjust size */
+  color: #fff; /* Adjust color */
+  margin-top: -5px; /* Adjust positioning */
+  font-weight: normal;
+  font-family: "Permanent Marker", cursive;
+}
 </style>
 

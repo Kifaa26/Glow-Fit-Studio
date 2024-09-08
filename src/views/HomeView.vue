@@ -51,12 +51,12 @@ body {
 }
 
 .hero {
-   background-image: url('https://github.com/Kifaa26/glow-fit-studio-images/blob/main/image-asset%20(11).jpeg?raw=true'); /* New background image */
+  background-image: url('https://github.com/Kifaa26/glow-fit-studio-images/blob/main/image-asset%20(11).jpeg?raw=true');
   background-size: cover;
   background-position: center;
   color: white;
   text-align: center;
-  padding: 18rem;
+  padding: 18rem 2rem; 
   position: relative;
 }
 
@@ -90,7 +90,6 @@ body {
   margin-top: 1rem;
 }
 
-
 .classes {
   padding: 2rem;
   text-align: center;
@@ -103,11 +102,12 @@ body {
   font-family: "Permanent Marker", cursive;
   text-shadow: 2px 2px 5px #c7c7c7c0;
 }
+
 .classes p {
   font-size: 20px;
   color: #332e2e;
-   font-family: "Permanent Marker", cursive;
-   text-shadow: 2px 2px 5px #c7c7c7c0;
+  font-family: "Permanent Marker", cursive;
+  text-shadow: 2px 2px 5px #c7c7c7c0;
 }
 
 .class-item {
@@ -125,7 +125,6 @@ body {
   font-size: 1rem;
 }
 
-
 .class-images {
   display: flex;
   justify-content: center;
@@ -141,13 +140,91 @@ body {
   border-radius: 8px;
 }
 
-button {
-  background-color: rgba(250, 170, 190, 0.9);
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-size: 1rem;
+@media (max-width: 1024px) {
+  .hero {
+    padding: 12rem 2rem; 
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .classes h2 {
+    font-size: 1.5rem;
+  }
+
+  .classes p {
+    font-size: 1rem;
+  }
+
+  .class-images {
+    flex-direction: column;
+  }
+
+  .class-images img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 8rem 1rem; 
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+  }
+
+  .classes h2 {
+    font-size: 1.2rem;
+  }
+
+  .classes p {
+    font-size: 0.9rem;
+  }
+
+  .class-images {
+    flex-direction: column;
+  }
+
+  .class-images img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 6rem 0.5rem; 
+  }
+
+  .hero h1 {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+  }
+
+  .classes h2 {
+    font-size: 1rem;
+  }
+
+  .classes p {
+    font-size: 0.8rem;
+  }
 }
 
 

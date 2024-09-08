@@ -82,7 +82,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 2rem;
   background: linear-gradient(135deg, rgba(250, 170, 190, 0.9), rgba(247, 212, 109, 0.9));
   gap: 2rem;
 }
@@ -116,10 +116,10 @@ body {
 }
 
 .about-image {
- flex: 1;
+  flex: 1;
   max-width: 500px;
   flex-shrink: 0;
-   margin-top: 50px;
+  margin: 50px;
 }
 
 .about-image img {
@@ -132,7 +132,7 @@ body {
 .offerings {
   padding: 2rem;
   background: linear-gradient(135deg, rgba(250, 170, 190, 0.9), rgba(247, 212, 109, 0.9));
-    font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
 }
 
 .offerings h2 {
@@ -192,15 +192,15 @@ body {
   font-family: "Permanent Marker", cursive;
 }
 
-.why-list {
+.cards-container {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
 }
 
-.why-item {
-  background-color: white;
+.card {
+  background-color: rgb(255, 236, 174);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -209,21 +209,99 @@ body {
   max-width: 350px;
 }
 
-.why-item:hover {
+.card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.why-item h3 {
+.card h3 {
   margin-top: 0;
   font-size: 1.5rem;
   color: #ff6f61;
   font-family: "Permanent Marker", cursive;
 }
 
-.why-item p {
+.card p {
   font-size: 1rem;
   line-height: 1.6;
   color: #666;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .about-us {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+
+  .about-text {
+    padding: 1rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .offerings h2, .why-choose-us h2 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-us {
+    padding: 1rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+  }
+
+  .offerings h2, .why-choose-us h2 {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us {
+    padding: 0.5rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .about-text p {
+    font-size: 0.8rem;
+  }
+
+  .offerings h2, .why-choose-us h2 {
+    font-size: 1.4rem;
+  }
+
+  .card {
+    max-width: 100%;
+    padding: 1rem;
+  }
 }
 </style>

@@ -65,6 +65,7 @@
   position: relative; 
   text-decoration: none;
   transition: color 0.3s ease;
+  text-shadow: 2px 2px 5px #00000088;
 }
 
 .navbar-nav .nav-link::after {
@@ -96,19 +97,21 @@
 
 .logo-main {
   display: block;
-  font-size: 24px; /* Adjust size */
+  font-size: 24px; 
   font-weight: bold;
-  color: #fff; /* Adjust color */
+  color: #fff; 
   font-family: "Permanent Marker", cursive;
+  text-shadow: 2px 2px 5px #000000;
 }
 
 .logo-sub {
   display: block;
-  font-size: 16px; /* Adjust size */
-  color: #fff; /* Adjust color */
-  margin-top: -5px; /* Adjust positioning */
+  font-size: 16px; 
+  color: #fff; 
+  margin-top: -5px; 
   font-weight: normal;
   font-family: "Permanent Marker", cursive;
+  text-shadow: 2px 2px 5px #000000;
 }
 </style>
 

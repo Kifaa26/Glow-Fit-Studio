@@ -65,6 +65,7 @@ body {
   display: inline-block;
   padding: 2rem;
   border-radius: 8px;
+  font-family: "Permanent Marker", cursive;
 }
 
 .hero-subtext {
@@ -93,14 +94,18 @@ body {
 .classes {
   padding: 2rem;
   text-align: center;
-  background-color: rgba(247, 212, 109, 0.3);
+  background: linear-gradient(135deg, rgba(250, 170, 190, 0.9), rgba(247, 212, 109, 0.9));
 }
 
 .classes h2 {
   padding: 25px;
+  color: #991d42;
+  font-family: "Permanent Marker", cursive;
 }
 .classes p {
   font-size: 20px;
+  color: #991d42;
+   font-family: "Permanent Marker", cursive;
 }
 
 .class-item {

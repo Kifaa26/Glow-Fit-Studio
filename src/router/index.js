@@ -26,11 +26,11 @@ const routes = [
 //     name: 'admin',
 //     component: () => import('@/views/AdminView.vue')
 //   },
-//   {
-//     path: '/contactUs',
-//     name: 'contactUs',
-//     component: () => import('@/views/ContactUsView.vue')
-//   },
+  {
+    path: '/contactUs',
+    name: 'contactUs',
+    component: () => import('@/views/ContactUsView.vue')
+  },
 //   {
 //     path: '/signup',
 //     name: 'signup',

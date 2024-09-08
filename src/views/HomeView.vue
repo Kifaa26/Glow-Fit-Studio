@@ -99,13 +99,15 @@ body {
 
 .classes h2 {
   padding: 25px;
-  color: #ff6f61;
+  color: #332e2e;
   font-family: "Permanent Marker", cursive;
+  text-shadow: 2px 2px 5px #c7c7c7c0;
 }
 .classes p {
   font-size: 20px;
-  color: #ff6f61;
+  color: #332e2e;
    font-family: "Permanent Marker", cursive;
+   text-shadow: 2px 2px 5px #c7c7c7c0;
 }
 
 .class-item {

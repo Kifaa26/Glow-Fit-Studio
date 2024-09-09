@@ -31,15 +31,15 @@
       <h2>Our Facilities</h2>
       <div class="facility-images">
         <div class="facility-item">
-          <img src="https://github.com/Kifaa26/glow-fit-studio-images/blob/main/ea63802cd21c49c410f7507e82007d87.jpg?raw=true" alt="Facility 1">
+          <img src="https://github.com/Kifaa26/fitness/blob/main/ea63802cd21c49c410f7507e82007d87.jpg?raw=true" alt="Facility 1">
           <p class="facility-description">Modern Cardio Equipment</p>
         </div>
         <div class="facility-item">
-          <img src="https://github.com/Kifaa26/glow-fit-studio-images/blob/main/71ec6583c2284c2fb62291bd80424e93.jpg?raw=true" alt="Facility 2">
+          <img src="https://github.com/Kifaa26/fitness/blob/main/71ec6583c2284c2fb62291bd80424e93.jpg?raw=true" alt="Facility 2">
           <p class="facility-description">Spacious Yoga Studio</p>
         </div>
         <div class="facility-item">
-          <img src="https://github.com/Kifaa26/glow-fit-studio-images/blob/main/506f683f46b9672538cc64e1d814b219.jpg?raw=true" alt="Facility 3">
+          <img src="https://github.com/Kifaa26/fitness/blob/main/506f683f46b9672538cc64e1d814b219.jpg?raw=true" alt="Facility 3">
           <p class="facility-description">Well-Equipped Strength Area</p>
         </div>
       </div>
@@ -69,7 +69,7 @@ body {
 }
 
 .hero {
-  background-image: url('https://github.com/Kifaa26/glow-fit-studio-images/blob/main/image-asset%20(11).jpeg?raw=true');
+  background-image: url('https://github.com/Kifaa26/fitness/blob/main/image-asset%20(11).jpeg?raw=true');
   background-size: cover;
   background-position: center;
   color: white;

@@ -37,7 +37,7 @@
         
 
         <div class="contact-image">
-          <img src="https://github.com/Kifaa26/glow-fit-studio-images/blob/main/cfced8f491d8b86ad7ab8c75f7b79ae8.jpg?raw=true" alt="Contact Us Image">
+          <img src="https://github.com/Kifaa26/fitness/blob/main/cfced8f491d8b86ad7ab8c75f7b79ae8.jpg?raw=true" alt="Contact Us Image">
         </div>
       </div>
     </section>

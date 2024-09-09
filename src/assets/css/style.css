@@ -58,6 +58,7 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    background: linear-gradient(135deg, rgba(250, 170, 190, 0.9), rgba(247, 212, 109, 0.9));
 }
 
 

@@ -11,11 +11,11 @@ const routes = [
     name: 'aboutUs',
     component: () => import('@/views/AboutUsView.vue')
   },
-//   {
-//     path: '/bookNow',
-//     name: 'bookNow',
-//     component: () => import('@/views/BookNowView.vue')
-//   },
+  {
+    path: '/bookNow',
+    name: 'bookNow',
+    component: () => import('@/views/BookNowView.vue')
+  },
 //   {
 //     path: '/admin',
 //     name: 'admin',

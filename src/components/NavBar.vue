@@ -21,9 +21,6 @@
                             <router-link class="nav-link" to="/aboutUs">About Us</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link class="nav-link" to="/meetTheTeam">Meet the team</router-link>
-                        </li>
-                        <li class="nav-item">
                             <router-link class="nav-link" to="/bookNow">Book Now</router-link>
                         </li>
                         <li class="nav-item">

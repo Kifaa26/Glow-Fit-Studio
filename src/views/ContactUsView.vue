@@ -4,9 +4,9 @@
       <div class="contact-content">
         <div class="contact-text">
           <h2>Contact Us</h2>
-          <p>We'd love to hear from you! Whether you have questions about our classes, facilities, or anything else, feel free to reach out. Our team is here to assist you.</p>
+          <p>We would love to hear from you! Whether you have questions about our classes, facilities, or anything else, feel free to reach out. Our team is here to assist.</p>
           
-          <form action="https://formspree.io/f/xqkrjaaa" method="POST" class="contact-form">
+          <form action="https://formspree.io/f/xnnaryqg" method="POST" class="contact-form">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required />
 
@@ -98,16 +98,22 @@ body {
   font-family: "Permanent Marker", cursive;
 }
 
-.contact-text p {
+.contact-text p:first-of-type {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 2rem; 
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 50%;
+  margin: 2rem auto;
+  
 }
 
 .contact-form label {

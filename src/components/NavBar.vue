@@ -28,7 +28,7 @@
                         </li>
                         <ul class="userAccount navbar-nav">
                             <li class="nav-item">
-                                <router-link class="nav-link" to="/signup/login">Sign Up/Login</router-link>
+                                <router-link class="nav-link" to="/signup">Sign Up</router-link>
                             </li>
                         </ul>
                     </ul>

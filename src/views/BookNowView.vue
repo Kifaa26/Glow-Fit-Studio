@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <div class="row">
-        <h2 class="display-2">Secure your spot!</h2>
+        <h2>Secure your spot!</h2>
       </div>
       <div class="row gap-2 justify-content-center my-2" v-if="instructor">
         <Card v-for="instructor in instructor" :key="instructor.instructor_id">

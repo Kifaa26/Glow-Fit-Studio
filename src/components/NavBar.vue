@@ -24,9 +24,6 @@
                             <router-link class="nav-link" to="/bookNow">Book Now</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link class="nav-link" to="/admin">Admin</router-link>
-                        </li>
-                        <li class="nav-item">
                             <router-link class="nav-link" to="/contactUs">Contact Us</router-link>
                         </li>
                         <ul class="userAccount navbar-nav">

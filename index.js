@@ -27,7 +27,7 @@ app.use(
     }),
     cors()
 )
-// Endpoint
+
 app.get("^/$|/glowfitstudio", (req, res) => {
   res.status(200).sendFile(path.resolve("./static/html/index.html"))
 })
@@ -39,5 +39,5 @@ app.get('*', (req, res) => {
   })
 app.use(errorHandling)
 app.listen(port, () => {
-    console.log(`Live on Port: ${port}`)
+    console.log(`Server is running on ${port}`)
   })

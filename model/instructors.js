@@ -25,7 +25,7 @@ class Instructors {
     fetchinstructor(req, res) {
         try{
             const strQry = `
-            select  instructor_id, first_name, last_name, email, specialization, bio, profile_url,pwd
+            select  instructor_id, first_name, last_name, email, specialization, bio, profile_url, pwd
             from instructors where user_id = ${req.params.id};
             `
             db.query(strQry, (err, result) => {

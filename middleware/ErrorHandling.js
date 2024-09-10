@@ -3,7 +3,7 @@ function errorHandling(err, req, res, next) {
         res.json(
             {
                 status: err.status || res.statusCode || 500,
-                err: "An error occurred =(. Please try again later."
+                err: "An error occurred. Please try again later."
             }
     )
     }
@@ -13,3 +13,4 @@ function errorHandling(err, req, res, next) {
 export {
     errorHandling
 }
+

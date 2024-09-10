@@ -4,7 +4,7 @@ const { sign, verify } = jwt
 
 function createToken(users){
     return sign({
-        emailAdd: users.emailAdd,
+        email: users.email,
         pwd: users.pwd,
     },
     process.env.SECRET_KEY,
@@ -13,7 +13,7 @@ function createToken(users){
     })
 }
 
-function verifyToken(req, res, next) {
+function verifyAToken(req, res, next) {
     const token = req?.headers["authorization"]
     if (token) {
         if (verify(token, process.env.SECRET_KEY)){
@@ -34,7 +34,7 @@ function verifyToken(req, res, next) {
 
 export {
     createToken, 
-    verifyToken 
+    verifyAToken 
 }
 
 

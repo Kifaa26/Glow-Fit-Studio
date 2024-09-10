@@ -1,14 +1,14 @@
 import { connection as db } from '../config/index.js'
 
 class Instructors {
-    fetchinstructors(req, res) {
+    fetchInstructors(req, res) {
         try {
             const strQry = `
-                select  instructor_id, first_name, last_name, email, specialization, bio, profile_url, pwd
+                select  instructor_id, first_name, last_name, email, specialization, bio, profile_url
                 from instructors;
                 `
             db.query(strQry, (err, results) => {
-              if (err) throw new Error(`There was an issue when retrieiving all instructors`)
+              if (err) throw new Error(err.message)
               res.json({
                 status: res.statusCode,
                 results 
@@ -22,7 +22,7 @@ class Instructors {
           }
     }
     
-    fetchinstructor(req, res) {
+    fetchInstructor(req, res) {
         try{
             const strQry = `
             select  instructor_id, first_name, last_name, email, specialization, bio, profile_url, pwd
@@ -43,7 +43,7 @@ class Instructors {
           }
     }
     
-    async registerinstructor(req, res) {
+    async registerInstructor(req, res) {
         try {
             let data = req.body
               data.pwd = await hash(data.pwd, 12)
@@ -79,7 +79,7 @@ class Instructors {
           }
     }
 
-   async updateinstructor(req, res) {
+   async updateInstructor(req, res) {
         try {
             let data = req.body
             if (data.pwd) {
@@ -105,7 +105,7 @@ class Instructors {
           }
     }
 
-    deleteinstructor(req, res) {
+    deleteInstructor(req, res) {
         try {
             const strQry = `
             delete from instructors 

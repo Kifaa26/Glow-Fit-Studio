@@ -17,16 +17,16 @@ app.use((req, res, next) => {
     res.header("Access-Control-Expose-Headers", "Authorization")
     next()
   })
-app.use('/users', userRouter)
-app.use('/instructors', instructorRouter)
-app.use(
-  express.static("./static"),
-  express.json(),
-  express.urlencoded({
-    extended: true
+  app.use(
+    express.static("./static"),
+    express.json(),
+    express.urlencoded({
+      extended: true
     }),
     cors()
-)
+  )
+  app.use('/users', userRouter)
+  app.use('/instructors', instructorRouter)
 
 app.get("^/$|/glowfitstudio", (req, res) => {
   res.status(200).sendFile(path.resolve("./static/html/index.html"))

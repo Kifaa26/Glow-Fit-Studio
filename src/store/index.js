@@ -3,7 +3,7 @@ import axios from 'axios'
 import { toast } from 'vue3-toastify'
 import 'vue3-toastify/dist/index.css'
 import router from '@/router'
-const apiURL = ''
+const apiURL = 'https://glow-fit-studio.onrender.com'
 export default createStore({
   state: {
     users: null,
@@ -21,12 +21,11 @@ export default createStore({
       state.user = value
     },
     setInstructors(state, value) {
-      state.products = value
+      state.instructors = value
     },
     setRegistrationStatus(state, status) {
       state.registrationStatus = status;
     }
-
   },
   actions: {
     async fetchUsers(context) {
@@ -124,14 +123,13 @@ export default createStore({
         })
       }
     },
+
     // Instructors
     async fetchInstructors(context) {
       try {
-        const { results } = await (await axios.get(`${apiURL}instructors`)).data
+        const { results } = await (await axios.get(`${apiURL}/instructors`)).data
         if (results) {
           context.commit('setInstructors', results)
-        } else {
-          router.push({ name: 'login' })
         }
       } catch (e) {
         toast.error(`${e.message}`, {
@@ -140,7 +138,7 @@ export default createStore({
         })
       }
     },
-    async fetcInstructor(context, id) {
+    async fetchInstructor(context, id) {
       try {
         const { results, msg } = await (await axios.get(`${apiURL}instructors/${id}`)).data
         if (results) {

@@ -3,8 +3,8 @@
       <div class="row">
         <h2>Secure your spot!</h2>
       </div>
-      <div class="row gap-2 justify-content-center my-2" v-if="instructor">
-        <Card v-for="instructor in instructor" :key="instructor.instructor_id">
+      <div class="row gap-2 justify-content-center my-2" v-if="instructors">
+        <Card v-for="instructor in instructors" :key="instructor.instructor_id">
           <template #cardHeader>
             <img :src="instructor.profile_url" loading="lazy" class="img-fluid instructor-image" :alt="instructor.first_name">
           </template>
@@ -14,7 +14,7 @@
               <span class="text-success fw-bold">Specialization</span>: {{ instructor.specialization }}
             </p>
             <div class="button-wrapper d-md-flex d-block justify-content-between">
-              <router-link :to="{ name: 'instructor', params: { id: instructor.instructor_id } }">
+              <router-link :to="{ name: 'instructors', params: { id: instructor.instructor_id } }">
                 <button class="btn btn-success">View</button>
               </router-link>
             </div>
@@ -34,7 +34,7 @@
   import Card from '@/components/Card.vue'
   
   const store = useStore()
-  const instructor = computed(() => store.state.instructor)
+  const instructors = computed(() => store.state.instructors);
   
   onMounted(() => {
     store.dispatch('fetchInstructors')

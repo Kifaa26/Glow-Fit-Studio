@@ -2,7 +2,6 @@ import express from "express";
 import bodyParser from "body-parser";
 import { instructors } from '../model/index.js'
 
-
 const instructorRouter = express.Router()
 instructorRouter.use(bodyParser.json())
 

@@ -28,13 +28,13 @@ class Users {
         try{
             const strQry = `
             select user_id, first_name, last_name, role, email, phone_numb, pwd, profile_url
-            from Users where userID = ${req.params.id};
+            from Users where user_id = ?;
             `
-            db.query(strQry, (err, result) => {
-              if (err) throw new Error(err.message)
+            db.query(strQry, [req.params.id], (err, result) => {
+              if (err) throw new Error(err.message);
               res.json({
-            status: res.statusCode,
-            result: result[0]
+                status: res.statusCode,
+                result: result[0],
               })
             })
           } catch (e) {
@@ -51,7 +51,7 @@ class Users {
               data.pwd = await hash(data.pwd, 12)
 
             let user = {
-            emailAdd: data.emailAdd,
+            email: data.email,
             pwd: data.pwd
             } 
             

@@ -7,4 +7,4 @@ const users = new Users()
 export {
     instructors,
     users
-}
+ }

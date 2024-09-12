@@ -10,7 +10,7 @@ class Users {
                 from Users;
                 `
             db.query(strQry, (err, results) => {
-              if (err) throw new Error(`There was an issue when retrieiving all users`)
+              if (err) throw new Error (err.message);
               res.json({
                 status: res.statusCode,
                 results 

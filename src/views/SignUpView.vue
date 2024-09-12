@@ -1,71 +1,104 @@
 <template>
-    <div class="container">
-      <div class="row">
-        <h2 class="display-2 pt-5">Sign Up</h2>
-      </div>
-      <div class="row pt-5">
-        <form class="form" @submit.prevent="register">
-          <div class="form-control-wrapper">
-            <span>
-              <input class="form-control" type="text" placeholder="First name" v-model="payload.first_name" required />
-            </span>
-          </div>
-          <div class="form-control-wrapper">
-            <span>
-              <input class="form-control" type="text" placeholder="Last name" v-model="payload.last_name" required />
-            </span>
-          </div>
-          <div class="form-control-wrapper">
-            <span>
-              <input class="form-control" type="email" placeholder="Email address" v-model="payload.email" required />
-            </span>
-          </div>
-          <div class="form-control-wrapper">
-            <span>
-              <input class="form-control" type="password" placeholder="Password" v-model="payload.pwd" required />
-            </span>
-          </div>
-          <div class="form-control-wrapper d-md-flex d-block justify-content-between">
-            <button type="submit" class="btn btn-success">Sign Up</button>
-            <button type="reset" class="btn btn-dark">Reset</button>
-          </div>
-        </form>
-      </div>
-      <div class="row pt-5 banner-wrapper">
-      <img src="https://github.com/Kifaa26/glow-fit-studio-images/blob/main/c8a894610c101d2596ef45c959034a17.jpg?raw=true" 
-           alt="Sign Up Banner" class="banner img-fluid" loading="lazy" />
+  <div class="container">
+    <div class="row">
+      <h2 class="display-2 pt-5">Sign Up</h2>
     </div>
-      <!-- Success or Error Message -->
-      <div v-if="registrationStatus === 'success'" class="alert alert-success mt-3">
-        Registration successful!
-      </div>
-      <div v-if="registrationStatus === 'error'" class="alert alert-danger mt-3">
-        Registration failed! Please try again.
-      </div>
+    <div class="row pt-5">
+      <form class="form" @submit.prevent="register">
+        <div class="form-control-wrapper">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="First name"
+            v-model="payload.first_name"
+            required
+          />
+        </div>
+        <div class="form-control-wrapper">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Last name"
+            v-model="payload.last_name"
+            required
+          />
+        </div>
+        <div class="form-control-wrapper">
+          <input
+            class="form-control"
+            type="email"
+            placeholder="Email address"
+            v-model="payload.email"
+            required
+          />
+        </div>
+        <div class="form-control-wrapper">
+          <input
+            class="form-control"
+            type="password"
+            placeholder="Password"
+            v-model="payload.pwd"
+            required
+          />
+        </div>
+        <div class="form-control-wrapper d-md-flex d-block justify-content-between">
+          <button type="submit" class="btn btn-success">Sign Up</button>
+          <button type="reset" class="btn btn-dark">Reset</button>
+        </div>
+      </form>
     </div>
-  </template>
-  
-  <script setup>
-  import { reactive, computed } from 'vue';
-  import { useStore } from 'vuex';
-  
-  const store = useStore();
-  
-  const payload = reactive({
-    first_name: '',
-    last_name: '',
-    email: '',
-    pwd: '',
-  });
-  
-  const registrationStatus = computed(() => store.state.registrationStatus);
-  
-  function register() {
-    store.dispatch('register', payload);
+    <div v-if="registrationStatus === 'success'" class="alert alert-success mt-3">
+      Registration successful! <router-link to="/login">Login here</router-link>
+    </div>
+    <div v-if="registrationStatus === 'error'" class="alert alert-danger mt-3">
+      Registration failed! Please try again.
+    </div>
+    <div class="login pt-3">
+      <p>Already have an account? <router-link to="/login">Login</router-link></p>
+    </div>
+    <div class="row pt-5 banner-wrapper">
+      <img
+        src="https://github.com/Kifaa26/glow-fit-studio-images/blob/main/c8a894610c101d2596ef45c959034a17.jpg?raw=true"
+        alt="Sign Up Banner"
+        class="banner img-fluid"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { reactive, computed } from 'vue';
+import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
+
+const store = useStore();
+const router = useRouter();
+
+const payload = reactive({
+  first_name: '',
+  last_name: '',
+  email: '',
+  pwd: '',
+});
+
+const registrationStatus = computed(() => store.state.registrationStatus);
+
+async function register() {
+  try {
+    await store.dispatch('register', payload);
+    payload.first_name = '';
+    payload.last_name = '';
+    payload.email = '';
+    payload.pwd = '';
+    router.push({ name: 'login' });
+  } catch (e) {
+    console.error('Registration error:', e);
   }
-  </script>
-  
-  <style scoped>
+}
+</script>
+
+<style scoped>
 html, body {
   height: 100%;
   background: linear-gradient(135deg, rgba(250, 170, 190, 0.9), rgba(247, 212, 109, 0.9));
@@ -84,7 +117,6 @@ html, body {
   color: #ff6f61;
   font-family: "Permanent Marker", cursive;
 }
-
 
 .form {
   display: flex;

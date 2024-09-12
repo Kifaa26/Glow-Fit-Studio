@@ -31,6 +31,9 @@ export default createStore({
     setRecentInstructors(state, value) {
       state.recentInstructors = value
     },
+    setLoginStatus(state, status) {
+      state.loginStatus = status;
+    },
     setRegistrationStatus(state, status) {
       state.registrationStatus = status;
     }
@@ -252,7 +255,36 @@ export default createStore({
           position: toast.POSITION.BOTTOM_CENTER
         })
       }
+    },
+    async login(context, payload) {
+      try {
+        const { msg, err, token } = await (await axios.post(`${apiURL}users/login`, payload)).data;
+        if (token) {
+          // Store token in localStorage or Vuex state if needed
+          localStorage.setItem('authToken', token);
+          context.commit('setLoginStatus', 'success');
+          toast.success(`${msg}`, {
+            autoClose: 2000,
+            position: toast.POSITION.BOTTOM_CENTER
+          });
+          router.push({ name: 'home' }); // Redirect to home page
+        } else {
+          context.commit('setLoginStatus', 'error');
+          toast.error(`${err}`, {
+            autoClose: 2000,
+            position: toast.POSITION.BOTTOM_CENTER
+          });
+        }
+      } catch (e) {
+        context.commit('setLoginStatus', 'error');
+        toast.error(`${e.message}`, {
+          autoClose: 2000,
+          position: toast.POSITION.BOTTOM_CENTER
+        });
+      }
     }
+  
+   
   },
   modules: {
   }

@@ -85,14 +85,12 @@ const payload = reactive({
 
 const register = async () => {
   try {
-    // Call the register action from the store
     await store.dispatch('registerUser', payload);
     registrationStatus.value = 'success';
 
-    // Redirect to login after a delay
     setTimeout(() => {
       router.push('/login');
-    }, 2000); // 2 second delay before redirect
+    }, 2000); 
   } catch (error) {
     registrationStatus.value = 'error';
   }

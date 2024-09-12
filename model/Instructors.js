@@ -26,7 +26,7 @@ class Instructors {
         try{
             const strQry = `
             select  instructor_id, first_name, last_name, email, specialization, bio, profile_url, pwd
-            from instructors where user_id = ${req.params.id};
+            from instructors where instructor_id = ${req.params.id};
             `
             db.query(strQry, (err, result) => {
               if (err) throw new Error(err.message)

@@ -27,6 +27,7 @@ app.use((req, res, next) => {
   )
   app.use('/users', userRouter)
   app.use('/instructors', instructorRouter)
+  app.use('/instructor', instructorRouter);
 
 app.get("^/$|/glowfitstudio", (req, res) => {
   res.status(200).sendFile(path.resolve("./static/html/index.html"))
@@ -41,3 +42,4 @@ app.use(errorHandling)
 app.listen(port, () => {
     console.log(`Server is running on ${port}`)
   })
+

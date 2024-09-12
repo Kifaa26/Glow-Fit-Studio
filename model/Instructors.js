@@ -31,8 +31,13 @@ class Instructors {
               where instructor_id = ?;
           `;
           db.query(strQry, [instructorId], (err, results) => {
-              if (err) throw new Error(err.message);
-              if (results.length === 0) {
+              if (err) {
+                  console.error(err.message);
+                  res.status(500).json({
+                      status: 500,
+                      msg: 'Internal server error'
+                  });
+              } else if (results.length === 0) {
                   res.status(404).json({
                       status: 404,
                       msg: 'Instructor not found'
@@ -45,12 +50,42 @@ class Instructors {
               }
           });
       } catch (e) {
+          console.error(e.message);
           res.status(500).json({
               status: 500,
-              msg: e.message
+              msg: 'Internal server error'
           });
       }
   }
+  //   fetchInstructor(req, res) {
+  //     try {
+  //         const instructorId = req.params.id;
+  //         const strQry = `
+  //             select instructor_id, first_name, last_name, email, specialization, bio, profile_url
+  //             from instructors
+  //             where instructor_id = ?;
+  //         `;
+  //         db.query(strQry, [instructorId], (err, results) => {
+  //             if (err) throw new Error(err.message);
+  //             if (results.length === 0) {
+  //                 res.status(404).json({
+  //                     status: 404,
+  //                     msg: 'Instructor not found'
+  //                 });
+  //             } else {
+  //                 res.json({
+  //                     status: res.statusCode,
+  //                     result: results[0]
+  //                 });
+  //             }
+  //         });
+  //     } catch (e) {
+  //         res.status(500).json({
+  //             status: 500,
+  //             msg: e.message
+  //         });
+  //     }
+  // }
     
     async registerInstructor(req, res) {
         try {

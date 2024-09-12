@@ -9,8 +9,9 @@ instructorRouter.get('/', (req, res) => {
     instructors.fetchInstructors(req, res)
 })
 
-instructorRouter.get('/instructor/:id', (req, res) => {
-    instructors.fetchInstructor(req, res)
+instructorRouter.get('/:id', (req, res) => {
+    console.log(`Fetching instructor with ID: ${req.params.id}`);
+    instructors.fetchInstructor(req, res);
 })
 
 instructorRouter.get('/latest',(req , res) => {

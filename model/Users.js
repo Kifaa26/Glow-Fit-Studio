@@ -7,7 +7,7 @@ class Users {
         try {
             const strQry = `
                 select user_id, first_name, last_name, role, email, phone_numb, pwd, profile_url
-                from Users;
+                from users;
                 `
             db.query(strQry, (err, results) => {
               if (err) throw new Error (err.message);
@@ -28,7 +28,7 @@ class Users {
         try{
             const strQry = `
             select user_id, first_name, last_name, role, email, phone_numb, pwd, profile_url
-            from Users where user_id = ?;
+            from users where user_id = ?;
             `
             db.query(strQry, [req.params.id], (err, result) => {
               if (err) throw new Error(err.message);
@@ -56,7 +56,7 @@ class Users {
             } 
             
             let strQry = `
-            insert into  Users
+            insert into  users
             set ?;
             `
             db.query(strQry, [data], (err) => {
@@ -88,7 +88,7 @@ class Users {
               data.pwd = await hash(data.pwd, 12)
             }
             const strQry = `
-            update Users
+            update users
             set ?
             where user_id = ${req.params.id}
             `
@@ -110,7 +110,7 @@ class Users {
     deleteUser(req, res) {
         try {
             const strQry = `
-            delete from Users 
+            delete from users 
             where user_id = ${req.params.id}
             `
             db.query(strQry, (err) => {
@@ -133,7 +133,7 @@ class Users {
             const {emailAdd, pwd} = req.body
             const strQry = `
             select user_id, first_name, last_name, role, email, phone_numb, pwd, profile_url
-            from Users
+            from users
             where email = '${email}'                  
             `
             db.query(strQry, async (err, result) => {             

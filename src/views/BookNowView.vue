@@ -11,7 +11,7 @@
         <template #cardBody>
           <h5 class="card-title fw-bold">{{ instructor.first_name }} {{ instructor.last_name }}</h5>
           <p class="lead">
-            <span class="text-success fw-bold">Specialization</span>: {{ instructor.specialization }}
+            <span class="text">Specialization</span>: {{ instructor.specialization }}
           </p>
           <div class="button-wrapper d-md-flex d-block justify-content-between">
             <router-link :to="{ name: 'instructor', params: { id: instructor.instructor_id } }">
@@ -69,6 +69,7 @@ onMounted(() => {
     color: rgb(5, 5, 5);
     font-size: 1.25rem;
     margin-bottom: 10px;
+    font-family: "Playfair Display", serif;
   }
   
   .lead {
@@ -81,13 +82,17 @@ onMounted(() => {
   }
   
   .btn-success {
-    background-color: rgb(5, 5, 5);
-    border-color: rgb(5, 5, 5);
-    color: #fff;
-  }
-  
-  .btn-success:hover {
-    background-color: #333;
-    border-color: #333;
+  background-color: #ff6f61;
+  color: #fff;
+  border: #ff6f61;
+}
+
+.btn-success:hover {
+  background-color: #ff6e61cb;
+}
+
+  .text {
+    font-weight: bolder;
+    color: #ff6f61;
   }
   </style>

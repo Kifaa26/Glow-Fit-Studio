@@ -9,7 +9,7 @@
         <template #cardBody>
           <h5 class="card-title fw-bold">{{ instructor.first_name }} {{ instructor.last_name }}</h5>
           <p class="lead">
-            <span class="text-success fw-bold">Specialization</span>: {{ instructor.specialization }}
+            <span class="text">Specialization</span>: {{ instructor.specialization }}
           </p>
           <p class="bio">{{ instructor.bio }}</p>
         </template>
@@ -56,6 +56,11 @@ h5 {
   text-align: center;
 }
 
+.text {
+    font-weight: bolder;
+    color: #ff6f61;
+  }
+
 .instructor-image {
   max-height: 200px;
   object-fit: cover;
@@ -86,14 +91,4 @@ h5 {
   margin-top: 10px;
 }
 
-.btn-success {
-  background-color: rgb(5, 5, 5);
-  border-color: rgb(5, 5, 5);
-  color: #fff;
-}
-
-.btn-success:hover {
-  background-color: #333;
-  border-color: #333;
-}
 </style>

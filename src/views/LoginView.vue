@@ -29,14 +29,6 @@
           </div>
         </form>
       </div>
-      <div class="row pt-5 banner-wrapper">
-        <img
-          src="https://example.com/login-banner.jpg"
-          alt="Login Banner"
-          class="banner img-fluid"
-          loading="lazy"
-        />
-      </div>
       <div v-if="loginStatus === 'success'" class="alert alert-success mt-3">
         Login successful! Redirecting...
       </div>

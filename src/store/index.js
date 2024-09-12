@@ -1,8 +1,10 @@
-import { createStore } from 'vuex'
-import axios from 'axios'
-import { toast } from 'vue3-toastify'
 import 'vue3-toastify/dist/index.css'
+
+import axios from 'axios'
+import { createStore } from 'vuex'
 import router from '@/router'
+import { toast } from 'vue3-toastify'
+
 const apiURL = 'https://glow-fit-studio.onrender.com/'
 export default createStore({
   state: {

@@ -43,8 +43,7 @@ onMounted(() => {
   
   <style>
   .container {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 40px;
   }
   
   h2 {

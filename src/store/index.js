@@ -262,14 +262,13 @@ export default createStore({
       try {
         const { msg, err, token } = await (await axios.post(`${apiURL}users/login`, payload)).data;
         if (token) {
-          // Store token in localStorage or Vuex state if needed
           localStorage.setItem('authToken', token);
           context.commit('setLoginStatus', 'success');
           toast.success(`${msg}`, {
             autoClose: 2000,
             position: toast.POSITION.BOTTOM_CENTER
           });
-          router.push({ name: 'home' }); // Redirect to home page
+          router.push({ name: 'home' }); 
         } else {
           context.commit('setLoginStatus', 'error');
           toast.error(`${err}`, {

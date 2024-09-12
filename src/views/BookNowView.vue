@@ -1,45 +1,45 @@
 <template>
-    <div class="container">
-      <div class="row">
-        <h2>Secure your spot!</h2>
-      </div>
-      <div class="row gap-2 justify-content-center my-2" v-if="instructors">
-        <Card v-for="instructor in instructors" :key="instructor.instructor_id">
-          <template #cardHeader>
-            <img :src="instructor.profile_url" loading="lazy" class="img-fluid instructor-image" :alt="instructor.first_name">
-          </template>
-          <template #cardBody>
-            <h5 class="card-title fw-bold">{{ instructor.first_name }} {{ instructor.last_name }}</h5>
-            <p class="lead">
-              <span class="text-success fw-bold">Specialization</span>: {{ instructor.specialization }}
-            </p>
-            <div class="button-wrapper d-md-flex d-block justify-content-between">
-              <router-link :to="{ name: 'instructors', params: { id: instructor.instructor_id } }">
-                <button class="btn btn-success">View</button>
-              </router-link>
-            </div>
-          </template>
-        </Card>
-      </div>
-      <div v-else>
-        <Spinner />
-      </div>
+  <div class="container">
+    <div class="row">
+      <h2>Secure your spot!</h2>
     </div>
-  </template>
-  
-  <script setup>
-  import { useStore } from 'vuex'
-  import { computed, onMounted } from 'vue'
-  import Spinner from '@/components/Spinner.vue'
-  import Card from '@/components/Card.vue'
-  
-  const store = useStore()
-  const instructors = computed(() => store.state.instructors);
-  
-  onMounted(() => {
-    store.dispatch('fetchInstructors')
-  })
-  </script>
+    <div class="row gap-2 justify-content-center my-2" v-if="instructors.length">
+      <Card v-for="instructor in instructors" :key="instructor.instructor_id">
+        <template #cardHeader>
+          <img :src="instructor.profile_url" loading="lazy" class="img-fluid instructor-image" :alt="instructor.first_name">
+        </template>
+        <template #cardBody>
+          <h5 class="card-title fw-bold">{{ instructor.first_name }} {{ instructor.last_name }}</h5>
+          <p class="lead">
+            <span class="text-success fw-bold">Specialization</span>: {{ instructor.specialization }}
+          </p>
+          <div class="button-wrapper d-md-flex d-block justify-content-between">
+            <router-link :to="{ name: 'instructor', params: { id: instructor.instructor_id } }">
+              <button class="btn btn-success">View</button>
+            </router-link>
+          </div>
+        </template>
+      </Card>
+    </div>
+    <div v-else>
+      <Spinner />
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { useStore } from 'vuex'
+import { computed, onMounted } from 'vue'
+import Spinner from '@/components/Spinner.vue'
+import Card from '@/components/Card.vue'
+
+const store = useStore()
+const instructors = computed(() => store.state.instructors)
+
+onMounted(() => {
+  store.dispatch('fetchInstructors')
+})
+</script>
   
   <style>
   .container {

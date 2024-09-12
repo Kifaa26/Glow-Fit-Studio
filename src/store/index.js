@@ -3,12 +3,14 @@ import axios from 'axios'
 import { toast } from 'vue3-toastify'
 import 'vue3-toastify/dist/index.css'
 import router from '@/router'
-const apiURL = 'https://glow-fit-studio.onrender.com'
+const apiURL = 'https://glow-fit-studio.onrender.com/'
 export default createStore({
   state: {
     users: null,
     user: null,
-    instructors: null,
+    instructors: [],
+    instructor: null,
+    recentInstructors: null,
     registrationStatus:null
   },
   getters: {
@@ -20,8 +22,14 @@ export default createStore({
     setUser(state, value) {
       state.user = value
     },
-    setInstructors(state, value) {
-      state.instructors = value
+    setInstructors(state, value) { 
+      state.instructors = value;
+    },
+    setInstructor(state, value) {
+      state.instructor = value
+    },
+    setRecentInstructors(state, value) {
+      state.recentInstructors = value
     },
     setRegistrationStatus(state, status) {
       state.registrationStatus = status;
@@ -127,9 +135,14 @@ export default createStore({
     // Instructors
     async fetchInstructors(context) {
       try {
-        const { results } = await (await axios.get(`${apiURL}/instructors`)).data
+        const { results } = await (await axios.get(`${apiURL}instructors`)).data
         if (results) {
           context.commit('setInstructors', results)
+        } else {
+          toast.error('No instructors found', {
+            autoClose: 2000,
+            position: toast.POSITION.BOTTOM_CENTER
+          })
         }
       } catch (e) {
         toast.error(`${e.message}`, {
@@ -138,19 +151,52 @@ export default createStore({
         })
       }
     },
+    // async fetchInstructors(context) {
+    //   try {
+    //     const { results } = await (await axios.get(`${apiURL}/instructors`)).data
+    //     if (results) {
+    //       context.commit('setInstructors', results)
+    //     }
+    //   } catch (e) {
+    //     toast.error(`${e.message}`, {
+    //       autoClose: 2000,
+    //       position: toast.POSITION.BOTTOM_CENTER
+    //     })
+    //   }
+    // },
+
+    // async fetchInstructor({ commit }, id) {
+    //   try {
+    //     const response = await axios.get(`${apiURL}/instructor/${id}`)
+    //     const data = response.data
+    //     if (data.result) {
+    //       commit('setInstructor', data.result)
+    //     } else {
+    //       toast.error('Instructor not found', {
+    //         autoClose: 2000,
+    //         position: toast.POSITION.BOTTOM_CENTER
+    //       })
+    //     }
+    //   } catch (error) {
+    //     toast.error(`Error fetching instructor: ${error.message}`, {
+    //       autoClose: 2000,
+    //       position: toast.POSITION.BOTTOM_CENTER
+    //     })
+    //   }
+    // },
     async fetchInstructor(context, id) {
       try {
-        const { results, msg } = await (await axios.get(`${apiURL}instructors/${id}`)).data
-        if (results) {
-          context.commit('setInstructors', results)
+        const { result, msg } = await (await axios.get(`${apiURL}instructors/${id}`)).data
+        if (result) {
+          context.commit('setInstructor', result)
         } else {
-          toast.error(`${msg}`, {
+          toast.error(msg, {
             autoClose: 2000,
             position: toast.POSITION.BOTTOM_CENTER
           })
         }
       } catch (e) {
-        toast.error(`${e.message}`, {
+        toast.error(e.message, {
           autoClose: 2000,
           position: toast.POSITION.BOTTOM_CENTER
         })

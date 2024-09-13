@@ -206,7 +206,6 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .contact-section {
     flex-direction: column;

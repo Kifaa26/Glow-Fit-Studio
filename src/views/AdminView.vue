@@ -189,4 +189,41 @@ h1, h2 {
 h1 {
     padding: 80px;
 }
+
+@media (min-width: 768px) {
+  .table th, .table td {
+    padding: 12px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2rem;
+    padding: 40px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .management-section {
+    margin-bottom: 30px;
+  }
+
+  .table th, .table td {
+    padding: 8px;
+    display: block;
+    text-align: left;
+  }
+
+  .table th {
+    background-color: #f8f9fa;
+  }
+
+  .table td {
+    border-top: 1px solid #dee2e6;
+  }
+}
   </style>

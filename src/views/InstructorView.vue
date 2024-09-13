@@ -97,5 +97,58 @@ h5 {
   margin-top: 10px;
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .card {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .instructor-image {
+    max-height: 150px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .lead {
+    font-size: 0.9rem;
+  }
+
+  .bio {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 15px;
+  }
+
+  .card {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .instructor-image {
+    max-height: 120px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .lead {
+    font-size: 0.8rem;
+  }
+
+  .bio {
+    font-size: 0.7rem;
+  }
+}
 
 </style>

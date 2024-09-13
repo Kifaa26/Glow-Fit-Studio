@@ -227,7 +227,6 @@ body {
   color: #666;
 }
 
-/* Responsive Styles */
 @media (max-width: 1024px) {
   .about-us {
     flex-direction: column;

@@ -95,4 +95,57 @@ onMounted(() => {
     font-weight: bolder;
     color: #ff6f61;
   }
+
+  @media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .lead {
+    font-size: 0.9rem;
+  }
+
+  .instructor-image {
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.25rem;
+    padding: 10px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .lead {
+    font-size: 0.85rem;
+  }
+
+  .instructor-image {
+    max-height: 120px;
+  }
+
+  .button-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-success {
+    width: 100%;
+    text-align: center;
+  }
+}
   </style>

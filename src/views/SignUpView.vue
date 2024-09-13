@@ -178,4 +178,52 @@ html, body {
 .alert {
   margin-top: 20px;
 }
+
+@media (min-width: 768px) {
+  .container {
+    padding: 40px;
+  }
+  
+  .display-2 {
+    font-size: 2.5rem;
+  }
+  
+  .form-control {
+    font-size: 18px;
+    padding: 12px;
+  }
+  
+  .btn-success, .btn-dark {
+    padding: 12px 20px;
+  }
+
+  .banner {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 10px;
+  }
+
+  .display-2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .form-control {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .btn-success, .btn-dark {
+    padding: 8px 16px;
+  }
+
+  .banner {
+    max-height: 200px;
+  }
+}
 </style>

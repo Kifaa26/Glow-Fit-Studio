@@ -155,4 +155,52 @@ html, body {
 .sign-up {
     font-family: "Playfair Display", serif;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .form {
+    padding: 10px;
+  }
+
+  .display-2 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .form-control {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .btn-success, .btn-dark {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 10px;
+  }
+
+  .display-2 {
+    font-size: 1.25rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .form-control {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .btn-success, .btn-dark {
+    padding: 6px;
+    font-size: 12px;
+  }
+}
 </style>

@@ -31,6 +31,9 @@
                                 <router-link class="nav-link" to="/signup">Sign Up</router-link>
                             </li>
                         </ul>
+                        <li class="nav-item">
+                            <router-link class="nav-link" to="/admin">Admin</router-link>
+                        </li>
                     </ul>
                 </div>
             </div>

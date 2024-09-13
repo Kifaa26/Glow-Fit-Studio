@@ -1,11 +1,10 @@
 import 'vue3-toastify/dist/index.css'
-
 import axios from 'axios'
 import { createStore } from 'vuex'
 import router from '@/router'
 import { toast } from 'vue3-toastify'
 
-const apiURL = 'https://glow-fit-studio.onrender.com/'
+const apiURL = 'http://localhost:4000/'
 export default createStore({
   state: {
     users: null,
@@ -16,6 +15,7 @@ export default createStore({
     registrationStatus:null
   },
   getters: {
+      user: state => state.user
   },
   mutations: {
     setUsers(state, value) {
@@ -264,6 +264,7 @@ export default createStore({
         if (token) {
           localStorage.setItem('authToken', token);
           context.commit('setLoginStatus', 'success');
+          context.dispatch('fetchUserData');
           toast.success(`${msg}`, {
             autoClose: 2000,
             position: toast.POSITION.BOTTOM_CENTER
@@ -284,7 +285,6 @@ export default createStore({
         });
       }
     }
-  
    
   },
   modules: {

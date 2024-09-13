@@ -1,3 +1,4 @@
+
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
@@ -21,15 +22,15 @@ const routes = [
     name: 'instructor',
     component: () => import('@/views/InstructorView.vue')
   },
-//   {
-//     path: '/admin',
-//     name: 'admin',
-//     component: () => import('@/views/AdminView.vue')
-//   },
   {
     path: '/contactUs',
     name: 'contactUs',
     component: () => import('@/views/ContactUsView.vue')
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: () => import('@/views/AdminView.vue')
   },
   {
     path: '/signup',

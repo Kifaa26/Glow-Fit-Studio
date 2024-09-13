@@ -43,10 +43,10 @@ export default {
     };
   },
   methods: {
-    submitForm() {
-      this.$emit('save', { ...this.user, ...this.form });
-    }
+  submitForm() {
+    this.$emit('save', { ...this.user, ...this.form });
   }
+}
 };
 </script>
 

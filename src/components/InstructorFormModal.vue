@@ -48,10 +48,10 @@
       };
     },
     methods: {
-      submitForm() {
-        this.$emit('save', { ...this.instructor, ...this.form });
-      }
-    }
+  submitForm() {
+    this.$emit('save', { ...this.user, ...this.form });
+  }
+}
   };
   </script>
   

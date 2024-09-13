@@ -48,7 +48,7 @@
       </form>
     </div>
     <div v-if="registrationStatus === 'success'" class="alert alert-success mt-3">
-      Registration successful! <router-link to="/login">Login here</router-link>
+      Registration successful! Redirecting to login...
     </div>
     <div v-if="registrationStatus === 'error'" class="alert alert-danger mt-3">
       Registration failed! Please try again.
@@ -68,12 +68,13 @@
 </template>
 
 <script setup>
-import { reactive, computed } from 'vue';
+import { reactive, ref } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 
 const store = useStore();
 const router = useRouter();
+const registrationStatus = ref(null);
 
 const payload = reactive({
   first_name: '',
@@ -82,20 +83,18 @@ const payload = reactive({
   pwd: '',
 });
 
-const registrationStatus = computed(() => store.state.registrationStatus);
-
-async function register() {
+const register = async () => {
   try {
-    await store.dispatch('register', payload);
-    payload.first_name = '';
-    payload.last_name = '';
-    payload.email = '';
-    payload.pwd = '';
-    router.push({ name: 'login' });
-  } catch (e) {
-    console.error('Registration error:', e);
+    await store.dispatch('registerUser', payload);
+    registrationStatus.value = 'success';
+
+    setTimeout(() => {
+      router.push('/login');
+    }, 2000); 
+  } catch (error) {
+    registrationStatus.value = 'error';
   }
-}
+};
 </script>
 
 <style scoped>

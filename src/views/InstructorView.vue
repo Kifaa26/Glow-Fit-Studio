@@ -12,6 +12,12 @@
             <span class="text">Specialization</span>: {{ instructor.specialization }}
           </p>
           <p class="bio">{{ instructor.bio }}</p>
+          <a href="https://calendar.app.google/1pYhBjN6ZgpsTtVv5" 
+             class="btn btn-success" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            Book Appointment
+          </a>
         </template>
       </Card>
       <div v-else>

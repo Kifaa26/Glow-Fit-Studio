@@ -4,7 +4,7 @@ import { createStore } from 'vuex'
 import router from '@/router'
 import { toast } from 'vue3-toastify'
 
-const apiURL = 'hhttps://glow-fit-studio.onrender.com/'
+const apiURL = 'https://glow-fit-studio.onrender.com/'
 export default createStore({
   state: {
     users: null,

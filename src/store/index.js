@@ -1,8 +1,10 @@
-import { createStore } from 'vuex'
-import axios from 'axios'
-import { toast } from 'vue3-toastify'
 import 'vue3-toastify/dist/index.css'
+
+import axios from 'axios'
+import { createStore } from 'vuex'
 import router from '@/router'
+import { toast } from 'vue3-toastify'
+
 const apiURL = 'https://glow-fit-studio.onrender.com/'
 export default createStore({
   state: {
@@ -255,34 +257,34 @@ export default createStore({
           position: toast.POSITION.BOTTOM_CENTER
         })
       }
+    },
+    async login(context, payload) {
+      try {
+        const { msg, err, token } = await (await axios.post(`${apiURL}users/login`, payload)).data;
+        if (token) {
+          // Store token in localStorage or Vuex state if needed
+          localStorage.setItem('authToken', token);
+          context.commit('setLoginStatus', 'success');
+          toast.success(`${msg}`, {
+            autoClose: 2000,
+            position: toast.POSITION.BOTTOM_CENTER
+          });
+          router.push({ name: 'home' }); // Redirect to home page
+        } else {
+          context.commit('setLoginStatus', 'error');
+          toast.error(`${err}`, {
+            autoClose: 2000,
+            position: toast.POSITION.BOTTOM_CENTER
+          });
+        }
+      } catch (e) {
+        context.commit('setLoginStatus', 'error');
+        toast.error(`${e.message}`, {
+          autoClose: 2000,
+          position: toast.POSITION.BOTTOM_CENTER
+        });
+      }
     }
-    // async login(context, payload) {
-    //   try {
-    //     const { msg, err, token } = await (await axios.post(`${apiURL}users/login`, payload)).data;
-    //     if (token) {
-    //       // Store token in localStorage or Vuex state if needed
-    //       localStorage.setItem('authToken', token);
-    //       context.commit('setLoginStatus', 'success');
-    //       toast.success(`${msg}`, {
-    //         autoClose: 2000,
-    //         position: toast.POSITION.BOTTOM_CENTER
-    //       });
-    //       router.push({ name: 'home' }); // Redirect to home page
-    //     } else {
-    //       context.commit('setLoginStatus', 'error');
-    //       toast.error(`${err}`, {
-    //         autoClose: 2000,
-    //         position: toast.POSITION.BOTTOM_CENTER
-    //       });
-    //     }
-    //   } catch (e) {
-    //     context.commit('setLoginStatus', 'error');
-    //     toast.error(`${e.message}`, {
-    //       autoClose: 2000,
-    //       position: toast.POSITION.BOTTOM_CENTER
-    //     });
-    //   }
-    // }
   
    
   },

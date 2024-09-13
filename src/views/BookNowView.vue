@@ -15,7 +15,7 @@
           </p>
           <div class="button-wrapper d-md-flex d-block justify-content-between">
             <router-link :to="{ name: 'instructor', params: { id: instructor.instructor_id } }">
-              <button class="btn btn-success">View</button>
+              <button class="btn btn-success">Book</button>
             </router-link>
           </div>
         </template>
